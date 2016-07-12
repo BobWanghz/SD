@@ -212,18 +212,17 @@ void write_to_sd()
 ** Parameters:		None
 ** Returned value:	The length of sended message.
 ******************************************************************************/
-int data_return()
+int data_return(int location)
 {
 	int len = 0;
 	char read_buf[512];
-	int location = 0;
 	memset(read_buf,0,512);
 	pc.printf("Send the data back!\r\n");
 	FILE *fp;
 	fp = fopen("/sd/back.pac","rb");
 	if(fp)
 	{
-		read_location(&location);
+		//read_location(&location);
 		fseek(fp,location - 2,SEEK_SET);
 		u8 Len[2];
 		fread(Len,2,1,fp);  

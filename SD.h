@@ -33,7 +33,7 @@ template<typename T> T change_endian(T p);
 
 void set_path(int txt_num);
 void write_to_sd();
-int data_return();
+int data_return(int location);
 void print_buf(char* buf,int buf_len);
 int read_location(int* location);
 int write_location(int* location);
